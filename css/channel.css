@@ -1,0 +1,19 @@
+.card:hover {
+  transform: translateY(0%) !important;
+}
+.channel-header {
+  margin-top: 4rem !important;
+}
+.btn-danger {
+  background-color: #00b9d5 !important;
+  border-color: #00b9d5 !important;
+}
+.btn-danger:hover {
+  background-color: #148ea1 !important;
+  border-color: #148ea1 !important;
+}
+.channel-nav {
+  a {
+    color: black !important;
+  }
+}

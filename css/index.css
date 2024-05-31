@@ -1,0 +1,115 @@
+*:focus {
+  box-shadow: none !important;
+  a {
+    text-decoration: none !important;
+  }
+}
+.nav-link:hover,
+.active > .nav-link {
+  background-color: #00b9d5 !important;
+  color: white !important;
+}
+.bg-light {
+  background-color: white !important;
+}
+body {
+  background-color: #eee;
+}
+.btn-primary {
+  border-color: #00b9d5 !important;
+  background-color: #00b9d5 !important;
+  &:hover {
+    background-color: #148ea1 !important;
+  }
+}
+.btn-outline-primary {
+  border-color: #00b9d5 !important;
+  color: #00b9d5;
+  &:hover {
+    background-color: #148ea1 !important;
+    border-color: #00b9d5 !important;
+  }
+}
+.card {
+  transition: 0.2s;
+}
+.card:hover {
+  transform: translateY(-0.9%) !important;
+}
+.fa-bars {
+  cursor: pointer;
+}
+.list-right {
+  top: 48px;
+  height: 100%;
+  position: relative;
+  right: -27rem;
+  transition: ease-in-out 0.5s;
+  z-index: 4;
+  overflow: hidden;
+}
+.list-right:hover {
+  overflow: scroll;
+}
+.list-right::-webkit-scrollbar {
+  background-color: #ddd;
+}
+.list-right::-webkit-scrollbar-thumb {
+  background-color: #148ea1;
+  width: 15px;
+}
+.list-right .active {
+  background-color: #148ea1;
+}
+.list-right a:hover {
+  background-color: #00b9d5;
+  color: white;
+}
+.toggle {
+  right: 0 !important;
+}
+.layer {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  background-color: #000000a6;
+  display: none;
+}
+.modal-backdrop {
+  z-index: 0 !important;
+}
+.card-body h5 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.list-right {
+  padding-bottom: 3.6rem !important;
+}
+@media (max-width: 575px) {
+  .search-sign {
+    flex-direction: column;
+    gap: 5px;
+    .search {
+      button {
+        margin: 0px !important;
+      }
+    }
+
+    .sign-in {
+      margin: 0px !important;
+      width: 100% !important;
+    }
+  }
+}
+.nav-link {
+  text-wrap: nowrap;
+}
+
+@media (max-width: 400px) {
+  .w-25 {
+    width: 42% !important;
+  }
+}

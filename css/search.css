@@ -1,0 +1,9 @@
+.search-header {
+  margin-top: 6rem;
+  .filter-column {
+    display: none;
+  }
+}
+.filter {
+  cursor: pointer;
+}

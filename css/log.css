@@ -1,0 +1,25 @@
+.cont {
+  margin-top: 5rem;
+}
+.sort .active {
+  background-color: #00b9d5 !important;
+}
+.card-body p {
+  padding-left: 20px;
+}
+.card-body p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card {
+  position: relative;
+}
+.fa-times {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  z-index: 2;
+  cursor: pointer;
+  color: white;
+}

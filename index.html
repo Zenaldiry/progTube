@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.rtl.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div class="layer"></div>
+    <!-- navbar  -->
+    <div id="nav">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 fixed-top">
+        <i class="fas fa-bars fa-lg"></i>
+        <a class="navbar-brand ms-3" href="index.html">برمجة تيوب</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-lg-auto p-0">
+            <li class="nav-item me-3 first-link">
+              <a class="nav-link my-2 my-lg-0 p-2" href="index.html"
+                >فيديوهات لك</a
+              >
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link my-2 my-lg-0 p-2" href="channel.html"
+                >القناة</a
+              >
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link my-2 my-lg-0 p-2" href="search.html"
+                >ذات صلة</a
+              >
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link my-2 my-lg-0 p-2" href="watch.html">مشاهدة</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link my-2 my-lg-0 p-2" href="log.html">السجل</a>
+            </li>
+          </ul>
+          <!-- Modal -->
+          <div class="modal fade" id="signInModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content" style="z-index: 4">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    تسجيل الدخول
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    X
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="email" class="col-form-label"
+                      >اسم المستخدم</label
+                    >
+                    <input type="email" class="form-control" id="email" />
+                  </div>
+                  <div class="form-group">
+                    <label for="password" class="col-form-label"
+                      >كلمة المرور</label
+                    >
+                    <input type="password" class="form-control" id="password" />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    نسيت كلمة المرور
+                  </button>
+                  <button type="button" class="btn btn-outline-primary mx-auto">
+                    سجل الدخول
+                  </button>
+                  <button type="button" class="btn btn-outline-primary">
+                    انشاء حساب
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal -->
+          <div class="d-flex my-2 my-lg-0 search-sign">
+            <div class="search d-flex gap-1">
+              <input
+                class="form-control me-sm-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                onclick="location.href = 'search.html' "
+                class="btn btn-outline-primary my-2 my-sm-0 btn-sm"
+                type="submit"
+              >
+                بحث
+              </button>
+            </div>
+            <a
+              class="sign-in btn btn-success text-white ms-2 py-1 d-block w-75"
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#signInModal"
+              >تسجيل الدخول</a
+            >
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- navbar  -->
+    <!-- sidebar -->
+    <div class="list-right position-fixed w-25 mt-4">
+      <div class="list-group p-0 list-group-flush" id="list-tab" role="tablist">
+        <a
+          class="list-group-item list-group-item-action p-sm-3 active"
+          id="list-home-list"
+          data-toggle="list"
+          href="index.html"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fa fa-home me-1"></i>الصفحة الرئيسية
+        </a>
+        <a
+          class="list-group-item list-group-item-action p-sm-3"
+          id="list-home-list"
+          data-toggle="list"
+          href="#"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fas fa-fire-alt me-1"></i>الفيديوهات المقترحة</a
+        >
+        <a
+          class="list-group-item list-group-item-action p-sm-3"
+          id="list-home-list"
+          data-toggle="list"
+          href="index.html"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fas fa-plus-square me-1"></i>المرفوعة حديثا</a
+        >
+        <a
+          class="list-group-item list-group-item-action p-sm-3"
+          id="list-home-list"
+          data-toggle="list"
+          href="watch.html"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fas fa-fire-alt me-1"></i>الفيديوهات الرائجة</a
+        >
+        <a
+          class="list-group-item list-group-item-action p-sm-3"
+          id="list-home-list"
+          data-toggle="list"
+          href="search.html"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fas fa-fire-alt me-1"></i>فيديوهاتي
+        </a>
+        <a
+          class="list-group-item list-group-item-action p-sm-3"
+          id="list-home-list"
+          data-toggle="list"
+          href="log.html"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fa fa-history me-1"></i>سجل المشاهدة
+        </a>
+        <a
+          class="list-group-item list-group-item-action p-sm-3"
+          id="list-home-list"
+          data-toggle="list"
+          href="channel.html"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fa fa-share-square me-1"></i>الاشتراكات
+        </a>
+        <a
+          class="list-group-item list-group-item-action p-sm-3"
+          id="list-home-list"
+          data-toggle="list"
+          href="channel.html"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fa fa-share-square me-1"></i>القناة
+        </a>
+        <a
+          class="list-group-item list-group-item-action p-sm-3"
+          id="list-home-list"
+          data-toggle="list"
+          href="#"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fas fa-film me-1"></i>الافلام
+        </a>
+        <a
+          class="list-group-item list-group-item-action p-sm-3"
+          id="list-home-list"
+          data-toggle="list"
+          href="#"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fas fa-film me-1"></i>المسلسلات
+        </a>
+        <a
+          class="list-group-item list-group-item-action p-sm-3"
+          id="list-home-list"
+          data-toggle="list"
+          href="#"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fas fa-gamepad me-1"></i>العاب الفيديو
+        </a>
+        <a
+          class="list-group-item list-group-item-action p-sm-3"
+          id="list-home-list"
+          data-toggle="list"
+          href="#"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fas fa-tshirt me-1"></i>الموضة والجمال
+        </a>
+        <a
+          class="list-group-item list-group-item-action p-sm-3"
+          id="list-home-list"
+          data-toggle="list"
+          href="#"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fas fa-tshirt me-1"></i>المتجر
+        </a>
+        <a
+          class="list-group-item list-group-item-action p-sm-3"
+          id="list-home-list"
+          data-toggle="list"
+          href="#"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fas fa-graduation-cap me-1"></i>الدورات التعليمية
+        </a>
+        <a
+          class="list-group-item list-group-item-action p-sm-3"
+          id="list-home-list"
+          data-toggle="list"
+          href="#"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fas fa-graduation-cap me-1"></i>الكتب
+        </a>
+        <a
+          class="list-group-item list-group-item-action p-lg-3"
+          id="list-home-list"
+          data-toggle="list"
+          href="#"
+          role="tab"
+          aria-controls="home"
+          ><i class="purple fa fa-gear me-1"></i>الاعدادات
+        </a>
+      </div>
+    </div>
+    <!-- sidebar -->
+    <!-- content  -->
+    <div class="content mx-5 mt-5">
+      <!-- title  -->
+      <div class="row mx-3 mt-5">
+        <h3 class="mt-5">فيديوهات لك</h3>
+      </div>
+      <!-- title  -->
+      <!-- cards -->
+      <div class="rows mx-3">
+        <div id="card-holder" class="row my-4">
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/elzero.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">إزاي تبدأ تتعلم برمجة How to start</h5>
+                <div class="my-1">
+                  <img src="./img/elzero-logo.png" alt="" class="" />
+                  <span>Elzero Web School</span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=LdJbP0NbFRw"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/elzero2.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">يعني ايه برمجة ولغة برمجة وكود ؟</h5>
+                <div class="my-1">
+                  <img src="./img/elzero-logo.png" alt="" class="" />
+                  <span>Elzero Web School</span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=-5RfI6JvWvs&pp=ygUK2KjYsdmF2KzYqQ%3D%3D"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/elzero3.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">اتعلمت برمجة ومش لاقي وظيفة</h5>
+                <div class="my-1">
+                  <img src="./img/elzero-logo.png" alt="" class="" />
+                  <span>Elzero Web School</span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=_5YQqaD3g5k"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/elzero4.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">
+                  هل مجال الفرونت اند هينتهي بعد سنتين ؟
+                </h5>
+                <div class="my-1">
+                  <img src="./img/elzero-logo.png" alt="" class="" />
+                  <span>Elzero Web School</span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=NvVLtvmiKRg"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/hsoub.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">
+                  دورة الذكاء الاصطناعي - أكاديمية حسوب
+                </h5>
+                <div class="my-1">
+                  <img src="./img/hsoub-logo.png" alt="" class="img-fluid" />
+                  <span> أكاديمية حسوب </span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=9ESA9owvmGM&list=PL2Pq82trWJJWE3UluyLH9SbvMa4mAhCyM"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/hsoub2.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">
+                  دورة تطوير التطبيقات باستخدام JavaScript -
+                </h5>
+                <div class="my-1">
+                  <img src="./img/hsoub-logo.png" alt="" class="img-fluid" />
+                  <span> أكاديمية حسوب </span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=T6CnMmvF4e0&list=PL2Pq82trWJJWE3UluyLH9SbvMa4mAhCyM&index=5"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/hsoub3.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">
+                  دورة تطوير تطبيقات الويب باستخدام لغة Ruby -
+                </h5>
+                <div class="my-1">
+                  <img src="./img/hsoub-logo.png" alt="" class="img-fluid" />
+                  <span> أكاديمية حسوب </span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=bHgWB9w3CZk&list=PL2Pq82trWJJWE3UluyLH9SbvMa4mAhCyM&index=8&pp=iAQB"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/hsoub4.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">
+                  دورة تطوير تطبيقات الويب باستخدام لغة PHP -
+                </h5>
+                <div class="my-1">
+                  <img src="./img/hsoub-logo.png" alt="" class="img-fluid" />
+                  <span> أكاديمية حسوب </span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=o3ilJek788w&list=PL2Pq82trWJJWE3UluyLH9SbvMa4mAhCyM&index=6"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/elzero.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">إزاي تبدأ تتعلم برمجة How to start</h5>
+                <div class="my-1">
+                  <img src="./img/elzero-logo.png" alt="" class="" />
+                  <span>Elzero Web School</span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=LdJbP0NbFRw"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/elzero2.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">يعني ايه برمجة ولغة برمجة وكود ؟</h5>
+                <div class="my-1">
+                  <img src="./img/elzero-logo.png" alt="" class="" />
+                  <span>Elzero Web School</span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=-5RfI6JvWvs&pp=ygUK2KjYsdmF2KzYqQ%3D%3D"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/elzero3.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">اتعلمت برمجة ومش لاقي وظيفة</h5>
+                <div class="my-1">
+                  <img src="./img/elzero-logo.png" alt="" class="" />
+                  <span>Elzero Web School</span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=_5YQqaD3g5k"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/elzero4.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">
+                  هل مجال الفرونت اند هينتهي بعد سنتين ؟
+                </h5>
+                <div class="my-1">
+                  <img src="./img/elzero-logo.png" alt="" class="" />
+                  <span>Elzero Web School</span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=NvVLtvmiKRg"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/hsoub.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">
+                  دورة الذكاء الاصطناعي - أكاديمية حسوب
+                </h5>
+                <div class="my-1">
+                  <img src="./img/hsoub-logo.png" alt="" class="img-fluid" />
+                  <span> أكاديمية حسوب </span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=9ESA9owvmGM&list=PL2Pq82trWJJWE3UluyLH9SbvMa4mAhCyM"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/hsoub2.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">
+                  دورة تطوير التطبيقات باستخدام JavaScript -
+                </h5>
+                <div class="my-1">
+                  <img src="./img/hsoub-logo.png" alt="" class="img-fluid" />
+                  <span> أكاديمية حسوب </span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=T6CnMmvF4e0&list=PL2Pq82trWJJWE3UluyLH9SbvMa4mAhCyM&index=5"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/hsoub3.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">
+                  دورة تطوير تطبيقات الويب باستخدام لغة Ruby -
+                </h5>
+                <div class="my-1">
+                  <img src="./img/hsoub-logo.png" alt="" class="img-fluid" />
+                  <span> أكاديمية حسوب </span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=bHgWB9w3CZk&list=PL2Pq82trWJJWE3UluyLH9SbvMa4mAhCyM&index=8&pp=iAQB"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card fluid my-1">
+              <img src="./img/hsoub4.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">
+                  دورة تطوير تطبيقات الويب باستخدام لغة PHP -
+                </h5>
+                <div class="my-1">
+                  <img src="./img/hsoub-logo.png" alt="" class="img-fluid" />
+                  <span> أكاديمية حسوب </span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=o3ilJek788w&list=PL2Pq82trWJJWE3UluyLH9SbvMa4mAhCyM&index=6"
+                  class="btn btn-primary"
+                  >انتقل الى الفيديو</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- cards -->
+    </div>
+    <!-- content  -->
+    <script
+      src="https://kit.fontawesome.com/597cb1f685.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+.watch-page {
+  margin-top: 5rem !important;
+}
+.card-body {
+  padding-left: 10px !important;
+}
+.video-comments {
+  .card-body p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.card:hover {
+  transform: translateY(0%) !important;
+}
+
+.btn-secondary {
+  border-color: #00b9d5 !important;
+  background-color: #00b9d5 !important;
+}
+.btn-danger {
+  border-color: #207886 !important;
+  background-color: #207886 !important;
+}
+.card-inner {
+  display: none;
+}
+
+.dis {
+  display: block !important;
+}
+.hr {
+  display: none;
+}
+@media (max-width: 646px) {
+  .card {
+    .row {
+      .col-2 {
+        padding: 0 !important;
+        .text-secondary {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  .card-inner {
+    .row {
+      .col-2 {
+        padding: 0 !important;
+        .text-secondary {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .hr {
+    display: block;
+    margin-bottom: 20px;
+  }
+}
