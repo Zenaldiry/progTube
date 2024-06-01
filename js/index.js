@@ -17,6 +17,16 @@ $(document).ready(function () {
   });
   $(".layer").on("click", function () {
     $(".list-right").css("right", "-27rem");
+    $("body").css("overflow", "auto");
     $(".layer").fadeOut();
+  });
+  $(".navbar-toggler").addClass("collapsed");
+  $(document).on("click", function (event) {
+    if (
+      !$(event.target).closest(".navbar, .navbar *").length &&
+      !$(".navbar-toggler").hasClass("collapsed")
+    ) {
+      $(".navbar-toggler").trigger("click");
+    }
   });
 });
