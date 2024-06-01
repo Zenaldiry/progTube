@@ -11,6 +11,7 @@ $(document).ready(function () {
       $(".layer").fadeOut();
     } else {
       $(".list-right").css("right", "0");
+      $("body").css("overflow", "hidden");
       $(".layer").fadeIn();
     }
   });

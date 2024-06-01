@@ -48,7 +48,7 @@ body {
   z-index: 4;
   overflow: hidden;
 }
-.list-right:hover {
+.list-right {
   overflow: scroll;
 }
 .list-right::-webkit-scrollbar {
